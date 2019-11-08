@@ -8,10 +8,10 @@ class Solution():
                 for i in range(0,len(arr)//2):
                     l=2*i+1
                     r=2*i+2
-                    if arr[l]<=arr[r]:
+                    if arr[l]<=arr[r]:#比較子節點
                         if arr[l]<=arr[i]:
                             arr[l],arr[i]=arr[i],arr[l]
-                    elif arr[r]<arr[l]:
+                    elif arr[r]<arr[l]:#比較子節點
                         if arr[r]<arr[i]:
                             arr[r],arr[i]=arr[i],arr[r]
             elif (len(arr)-1)%2!=0:#存在一個子結點
@@ -20,10 +20,10 @@ class Solution():
                 for i in range(0,(len(arr)-1)//2):
                     l=2*i+1
                     r=2*i+2
-                    if arr[l]<=arr[r]:
+                    if arr[l]<=arr[r]:#比較子節點
                         if arr[l]<=arr[i]:
                             arr[l],arr[i]=arr[i],arr[l]
-                    elif arr[r]<arr[l]:
+                    elif arr[r]<arr[l]:#比較子節點
                         if arr[r]<arr[i]:
                             arr[r],arr[i]=arr[i],arr[r]           
         return arr
