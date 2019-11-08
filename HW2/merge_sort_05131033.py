@@ -21,6 +21,5 @@ class Solution():
             if p==len(r):
                 self.new.append(l[q])
             elif q==len(l):
-                self.new.append(r[p])
-                #print(self.new)                  
+                self.new.append(r[p])                  
             return self.new
