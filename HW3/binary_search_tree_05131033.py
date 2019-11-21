@@ -5,28 +5,26 @@ class TreeNode(object):
         self.right = None
         
 class Solution(object):
-    '''
-    def insert1(self, val):
-        if(self.root is None):
-            self.root=TreeNode(val)
-        else:
-            self.insert(self.root, val)
-    '''
     def insert(self, root, val):
-        if(val <= root.val):
+        if(val < root.val):
             if(root.left):
-                self.insert(root.left, val)
-                return self.insert
+                return self.insert(root.left, val)
             else:
                 root.left= TreeNode(val)
-                return self.insert
+                return root.left
         elif(val > root.val):
             if(root.right):
-                self.insert(root.right, val)
-                return self.insert
+                return self.insert(root.right, val)
             else:
                 root.right= TreeNode(val)
-                return self.insert
+                return root.right
+            '''
+        elif(val==root.val):
+            t=root.left
+            root.left.val=val
+            root.left.left=a
+            return root.left
+            '''
         """
         :type root: TreeNode
         :type val: int
@@ -47,12 +45,11 @@ class Solution(object):
         if(root is None):
             return False
         elif(target == root.val):
-            return True
+            return root
         elif(target < root.val):
             return self.search(root.left, target)
         else:
             return self.search(root.right, target)
-        return self.search
         """
         :type root: TreeNode
         :type target: int
@@ -65,12 +62,3 @@ class Solution(object):
         :type new_val: int
         :rtype:TreeNode(the root of new completed binary search tree) (cannot search())
         """
-n=TreeNode(5)
-n.left=TreeNode(3)
-n.right=TreeNode(6)
-
-a=Solution()
-a.root=n
-a.insert(n,4)
-#print(n.left.val)
-print(Solution().search(n,4)==n.left.right)
