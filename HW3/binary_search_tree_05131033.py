@@ -35,7 +35,7 @@ class Solution(object):
         """
         
     def delete(self, root, target):
-        
+        pass
         """
         :type root: TreeNode
         :type target: int
@@ -45,9 +45,9 @@ class Solution(object):
         if(root is None):
             return False
         elif(target == root.val):
-            if(target!=root.left.val):
+            if(root.left==None):
                 return root
-            else:
+            elif(target==root.left.val):
                 return root.left
         elif(target < root.val):
             return self.search(root.left, target)
@@ -59,6 +59,7 @@ class Solution(object):
         :rtype: TreeNode(searched node)
         """
     def modify(self, root, target, new_val):
+        pass
         """
         :type root: TreeNode
         :type target: int
