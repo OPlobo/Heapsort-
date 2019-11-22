@@ -66,3 +66,5 @@ class Solution(object):
         :type new_val: int
         :rtype:TreeNode(the root of new completed binary search tree) (cannot search())
         """
+> 參考資料:
+* [Binary Search Tree](https://docs.google.com/presentation/d/e/2PACX-1vQgUh73yvSdxAvMH50DHWJ5lsCX8-daMxtoltU9rYW7xCmqYz2A1wOv0Vcx_F9KO5ZUvZBv3IF1TjGi/pub?start=false&loop=false&delayms=3000&slide=id.g73e451e679_0_18)
