@@ -18,18 +18,22 @@ class Solution(object):
             else:
                 root.right= TreeNode(val)
                 return root.right
-            '''
         elif(val==root.val):
             t=root.left
-            root.left.val=val
-            root.left.left=a
-            return root.left
-            '''
+            if(root.left==None):
+                root.left= TreeNode(val)
+                return root.left 
+            else:
+                a=root.left.val
+                root.left.val=val  
+                root.left.left=self.insert(root.left, a)
+                return root.left
         """
         :type root: TreeNode
         :type val: int
         :rtype: TreeNode(inserted node)
         """
+        
     def delete(self, root, target):
         
         """
@@ -37,15 +41,14 @@ class Solution(object):
         :type target: int
         :rtype: TreeNode(the root of new completed binary search tree) (cannot search())
         """
-    '''
-    def search1(self,val):
-        return self.search(self.root, val)
-    '''
     def search(self, root, target):
         if(root is None):
             return False
         elif(target == root.val):
-            return root
+            if(target!=root.left.val):
+                return root
+            else:
+                return root.left
         elif(target < root.val):
             return self.search(root.left, target)
         else:
