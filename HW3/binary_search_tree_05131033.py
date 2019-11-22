@@ -6,26 +6,26 @@ class TreeNode(object):
         
 class Solution(object):
     def insert(self, root, val):
-        if(val < root.val):
-            if(root.left):
+        if(val < root.val):                             #比root小就加在left
+            if(root.left):                              #如果存在root.left，則重新insert
                 return self.insert(root.left, val)
             else:
-                root.left= TreeNode(val)
-                return root.left
+                root.left= TreeNode(val)                #如果root.left不存在，就insert進來
+                return root.left                        #並回傳root.left
         elif(val > root.val):
-            if(root.right):
-                return self.insert(root.right, val)
+            if(root.right):                             #比root大就加在right
+                return self.insert(root.right, val)     #如果存在root.right，則重新insert
             else:
-                root.right= TreeNode(val)
-                return root.right
+                root.right= TreeNode(val)               #如果root.right不存在，就insert進來
+                return root.right                       #並回傳root.right
         elif(val==root.val):
-            t=root.left
-            if(root.left==None):
-                root.left= TreeNode(val)
+            t=root.left                                 #如果等於也要加在root.left
+            if(root.left==None):                        #若root.left==None
+                root.left= TreeNode(val)                #就直接insert進來
                 return root.left 
             else:
-                a=root.left.val
-                root.left.val=val  
+                a=root.left.val                         #若root.left存在則把原始root.left   
+                root.left.val=val                       #insert在val的left
                 root.left.left=self.insert(root.left, a)
                 return root.left
         """
