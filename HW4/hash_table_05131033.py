@@ -57,3 +57,5 @@ class MyHashSet:
             else:
                 node=node.next
         return False
+
+    #參考資料:老師課堂投影片
