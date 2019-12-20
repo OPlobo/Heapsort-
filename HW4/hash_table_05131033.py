@@ -26,7 +26,7 @@ class MyHashSet:
     def add(self, key):
         x=self.encrypt(key)
         y=x%self.capacity
-        print(y)
+        #print(y)                                     #不小心加的print
         if self.data[y]==None:                        #若一開始為空，則直接加入
             newnode=ListNode(key)
             self.data[y]=newnode
@@ -52,7 +52,7 @@ class MyHashSet:
     def contains(self, key):                         #是否存在
         x=self.encrypt(key)
         y=x%self.capacity
-        print(y)
+        #print(y)                                   #不小心加的print
         node=self.data[y]
         while node:
             if node.val==key:                       #如果再，就回傳True
