@@ -25,6 +25,20 @@ class Graph:
         return q2
 
     def DFS(self, s):
+        q2=[]
+        if s:
+            q2.append(s)
+            a=self.graph[s]
+            while a:
+                b=a.pop(-1)
+                q2.append(b)
+                p=self.graph[b]
+                for i in range(0,len(p)):
+                    x=g.graph[b][i]
+                    if x not in q2:
+                        if x not in a:
+                            a.append(x)
+        return q2
         """
         :type s:int
         :rtype: list
