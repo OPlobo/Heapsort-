@@ -18,7 +18,7 @@ class Graph:
                 q2.append(b)
                 p=self.graph[b]
                 for i in range(0,len(p)):   #走訪下一個連結
-                    x=g.graph[b][i]
+                    x=self.graph[b][i]
                     if x not in q2:         #如果不在q2
                         if x not in a:      #如果不在a
                             a.append(x)     #則加入
@@ -34,7 +34,7 @@ class Graph:
                 q2.append(b)
                 p=self.graph[b]
                 for i in range(0,len(p)):
-                    x=g.graph[b][i]
+                    x=self.graph[b][i]
                     if x not in q2:
                         if x not in a:
                             a.append(x)
