@@ -39,8 +39,5 @@ class Graph:
                         if x not in a:
                             a.append(x)
         return q2
-        """
-        :type s:int
-        :rtype: list
-        """
+
 #參考資料:老師課堂投影片
