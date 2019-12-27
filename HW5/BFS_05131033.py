@@ -10,9 +10,10 @@ class Graph:
 
     def BFS(self, s):
         q2=[]
+        a=[]
         if s in self.graph:
             q2.append(s)
-            a=self.graph[s]                        
+            a.extend(self.graph[s])                        
             while a:
                 b=a.pop(0)                        
                 q2.append(b)
@@ -26,9 +27,10 @@ class Graph:
 
     def DFS(self, s):
         q2=[]
+        a=[]
         if s in self.graph:
             q2.append(s)
-            a=self.graph[s]
+            a.extend(self.graph[s])
             while a:
                 b=a.pop(-1)
                 q2.append(b)
