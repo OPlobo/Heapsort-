@@ -7,7 +7,6 @@ class Graph():
         self.graph = []
         self.graph_matrix = [[0 for column in range(vertices)]  
                     for row in range(vertices)]
-        self.g1=defaultdict(list)
         
     def addEdge(self,u,v,w): 
         """
